@@ -1,0 +1,48 @@
+﻿@model AppData.AnhChiTiet
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>AnhChiTiet</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label for="imageFile">Image</label>
+                <input type="file" name="imageFile" class="form-control" />
+                <span asp-validation-for="Anh" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="TrangThai" /> @Html.DisplayNameFor(model => model.TrangThai)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdLoaiPhong" class="control-label"></label>
+                <select asp-for="IdLoaiPhong" class ="form-control" asp-items="ViewBag.IdLoaiPhong"></select>
+            </div>
+           @*  <div class="form-group">
+                <label for="IdLoaiPhong">Loại Phòng</label>
+                @Html.DropDownList("IdLoaiPhong", ViewData["IdLoaiPhong"] as SelectList, "Chọn loại phòng", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IdLoaiPhong, "", new { @class = "text-danger" })
+            </div>
+ *@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="TrangQuanLy" asp-controller="TaiKhoan">Back</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

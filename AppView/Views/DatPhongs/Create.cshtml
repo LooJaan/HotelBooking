@@ -1,0 +1,159 @@
+﻿@model AppData.DatPhong
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div id="booking" style="margin-top:50px">
+    <div class="container">
+        <div class="section-header">
+            <h2>Room Booking</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in mi libero. Quisque convallis, enim at venenatis tincidunt.
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="booking-form">
+                    
+                    <form asp-action="Create" >
+                        <input type="hidden" asp-for="NgayDat" value="@DateTime.Now" />
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div id="success" class="form-row">
+                            <div class="form-group col-md-4">
+                                <label asp-for="LoaiPhongID" class="control-label"></label>
+                                <select asp-for="LoaiPhongID" class="form-control" asp-items="ViewBag.LoaiPhongID"></select>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label asp-for="KhachHang" class="control-label"></label>
+                                <input asp-for="KhachHang" class="form-control" />
+                                <span asp-validation-for="KhachHang" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label asp-for="CCCD" class="control-label"></label>
+                                <input asp-for="CCCD" class="form-control" />
+                                <span asp-validation-for="CCCD" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label asp-for="SoDienThoai" class="control-label"></label>
+                                <input asp-for="SoDienThoai" class="form-control" />
+                                <span asp-validation-for="SoDienThoai" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label asp-for="SoNguoiLon" class="control-label"></label>
+                                <input asp-for="SoNguoiLon" class="form-control" />
+                                <span asp-validation-for="SoNguoiLon" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label asp-for="SoTreEm" class="control-label"></label>
+                                <input asp-for="SoTreEm" class="form-control" />
+                                <span asp-validation-for="SoTreEm" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label asp-for="NgayNhan" class="control-label"></label>
+                                <input asp-for="NgayNhan" class="form-control" />
+                                <span asp-validation-for="NgayNhan" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label asp-for="NgayTra" class="control-label"></label>
+                                <input asp-for="NgayTra" class="form-control" />
+                                <span asp-validation-for="NgayTra" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label asp-for="SoLuongPhong" class="control-label"></label>
+                                <input asp-for="SoLuongPhong" class="form-control" />
+                                <span asp-validation-for="SoLuongPhong" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-12">
+                                <label asp-for="GhiChu" class="control-label"></label>
+                                <textarea style="height: 150px; " asp-for="GhiChu" class="form-control" id="request" placeholder="Nhập ghi chú" required="required" data-validation-required-message="Vui lòng nhập ghi chú"></textarea>
+                                <span asp-validation-for="GhiChu" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                       
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+<style>
+
+    #booking {
+        position: relative;
+        padding: 45px 0 60px 0;
+    }
+
+        #booking .container {
+            max-width: 990px;
+        }
+
+        #booking label {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        #booking .form-control {
+            height: 35px;
+            border: 1px solid #ddd;
+            border-radius: 0;
+            line-height: 24px;
+            padding: 5px 20px;
+            background-color: transparent;
+            color: black;
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        #booking .from-group .custom-select {
+            background-image: none;
+            background: transparent;
+        }
+
+        #booking .form-control:focus {
+            border-color: #FFD700;
+            box-shadow: none;
+            outline: 0 none;
+        }
+
+        #booking .button button {
+            display: inline-block;
+            font-size: 16px;
+            color: #FFD700;
+            line-height: 24px;
+            padding: 10px 30px 8px 30px;
+            border-radius: 0;
+            background: #222222;
+            border: none;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all .3s;
+        }
+
+            #booking .button button:hover {
+                color: #222222;
+                background: #FFD700;
+            }
+
+        #booking .help-block ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        #booking .dropdown-menu {
+            width: 230px;
+        }
+</style>

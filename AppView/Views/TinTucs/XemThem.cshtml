@@ -1,0 +1,83 @@
+﻿@model AppData.TinTuc
+<div id="learn-more-section" class="container" style="margin-top:100px">
+
+	@* @if (Model != null && Model.Any())
+	{ *@
+		@* @foreach (var item in Model)
+		{ *@
+			@* <h1 class="text-center my-4">@Model.TenTinTucChinh</h1>
+
+			<div class="row mb-4 align-items-center">
+				<div class="col-md-3">
+					<img src="@Url.Content("~/img/about/" + Model.HinhAnh1)" alt="About Us Image" class="img-fluid rounded">
+				</div>
+
+				<div class="col-md-6">
+					<p>@Model.NoiDungChiTiet1</p>
+				</div>
+			</div> *@
+		@* } *@
+	@* } *@
+	@* else
+	{
+		<p class="text-center">No content available.</p>
+	} *@
+
+    <!-- About Section Start -->
+    <div id="more-about">
+        <div class="container">
+            <div class="section-header">
+            </div>
+            <h2>@Model.TenTinTucChinh</h2>
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Hình ảnh và đoạn văn bản -->
+                    <div class="content-wrapper">
+                        <img class="img-left" src="@Url.Content("~/img/about/" + Model.HinhAnh1)" alt="About Image">
+                        <p class="text-about">
+                            @Model.NoiDungChiTiet1
+                            <br><br>
+                            @Model.NoiDungChiTiet2
+                        </p>
+
+                        <h4>@Model.TenTinTucPhu</h4>
+                        <p class="text-about">
+                            @Model.NoiDungChiTiet3
+                            <br>
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img id="anh" src="@Url.Content("~/img/about/" + Model.HinhAnh2)" alt="">
+                            </div>
+                            <div class="col-md-6">
+                                <img id="anh" src="@Url.Content("~/img/about/" + Model.HinhAnh3)" alt="">
+                            </div>
+                        </div>
+                        <p class="text-about">
+                            @Model.NoiDungChiTiet4
+                            <br>
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- About Section End -->
+
+    <style>
+        .text-about {
+            text-align: justify; /* Căn đều văn bản */
+            font-size: 16px; /* Cỡ chữ */
+            line-height: 1.6; /* Độ cao dòng */
+        }
+        #anh{
+            max-width: 100%;
+        }
+    </style>
+
+</div>

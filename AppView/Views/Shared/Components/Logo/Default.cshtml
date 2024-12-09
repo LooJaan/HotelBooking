@@ -1,0 +1,5 @@
+﻿@model IEnumerable<AppView.ViewModels.LoGoVM>
+@foreach (var item in Model)
+{
+    <a  asp-area="" asp-controller="Home" asp-action="Index" class="logo"><img src="~/img/@item.Logo" alt="logo"></a>
+}

@@ -1,0 +1,74 @@
+﻿@model IEnumerable<AppView.ViewModels.LoaiPhongVM>
+
+<div id="rooms">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Rooms</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in mi libero. Quisque convallis, enim at venenatis tincidunt.
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @foreach (var loaiPhong in Model.Take(5)) 
+                {
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="room-img">
+                                <div class="box12">
+                                    <img src="~/img/room/@loaiPhong.Anh">
+                                    <div class="box-content">
+                                        <h3 class="title">@loaiPhong.TenLoaiPhong</h3>
+                                        <ul class="icon">
+                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="room-des">
+                                <h3><a href="#">@loaiPhong.TenLoaiPhong</a></h3>
+                                <p>@loaiPhong.MoTa</p>
+                                <ul class="room-size">
+                                    <li><i class="fa fa-arrow-right"></i>Size: @loaiPhong.Size </li>
+                                    <li><i class="fa fa-arrow-right"></i>Beds: @loaiPhong.Giuong </li>
+                                </ul>
+                                <ul class="room-icon">
+                                    @foreach (var dichVu in loaiPhong.DichVus)
+                                    {
+                                        @if (dichVu.TrangThai)
+                                        {
+                                            <li>
+                                                <img style="margin-right: 5px; height: 40px; width: 40px;" src="~/img/icon/@dichVu.Hinh"  />
+                                            </li>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="room-rate">
+                                <h3>From</h3>
+                                <h1 style="color: #FFD700; font-size: 30px; font-weight: 900; padding: 15px 0; background: #353535;">
+                                    @loaiPhong.GiaGiamGia
+                                    <p style="text-decoration: line-through; text-decoration-thickness: 3px; color: lightgray; text-decoration-color: grey; font-size: 20px; font-weight: 900; padding-bottom: 0px; background: #353535;">
+                                        @loaiPhong.GiaGoc
+                                    </p>
+                                </h1>
+                                <a href="#">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .box12 img {
+        width: 150%;
+        height: auto;
+    }
+</style>

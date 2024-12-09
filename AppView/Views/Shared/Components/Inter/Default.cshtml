@@ -1,0 +1,13 @@
+﻿@model IEnumerable<AppView.ViewModels.InterVM>
+
+@foreach (var item in Model)
+{
+    @if (item.TrangThai)
+    {
+        <a href="@item.Link"><img src="~/img/@item.Hinh"></a>
+    }
+  
+}
+
+
+

@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ROYAL HOTEL | Responsive Travel & Tourism Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicons -->
+    <link href="~/img/favicon.ico" rel="icon">
+    <link href="~/img/apple-favicon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <!-- Vendor CSS File -->
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/vendor/animate/animate.min.css" rel="stylesheet">
+    <link href="~/vendor/slick/slick.css" rel="stylesheet">
+    <link href="~/vendor/slick/slick-theme.css" rel="stylesheet">
+    <link href="~/vendor/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Main Stylesheet File -->
+    <link href="~/css/hover-style.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <header id="header" style="position:fixed; top: 0;
+											left: 0;
+											width: 100%;
+											z-index: 1000;">
+
+            
+            @await Component.InvokeAsync("Logo")
+            @await Component.InvokeAsync("LienHe")
+            <div class="mobile-menu-btn"><i class="fa fa-bars"></i></div>
+            <nav class="main-menu top-menu">
+                <ul>
+                    @await Component.InvokeAsync("Menu")
+                </ul>
+            </nav>
+        </header>
+       
+ 
+    <div class="">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <!-- Footer Section Start -->
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="social">
+                            @await Component.InvokeAsync("Footer")
+                            @await Component.InvokeAsync("GG")
+                            @await Component.InvokeAsync("Inter")
+                            @await Component.InvokeAsync("TikTok")
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <p>Copyright &#169; 2045 <a href="">Your Site Name</a> All Rights Reserved.</p>
+                        <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <style>
+            #footer {
+                position: relative;
+                padding: 30px 0 25px 0;
+                text-align: center;
+                background: #222222;
+            }
+
+                #footer .container img {
+                    width: 35px;
+                    height: 35px
+                }
+
+                #footer .social {
+                    display: flex; /* Sử dụng flexbox */
+                    justify-content: center; /* Căn giữa ngang */
+                    align-items: center; /* Căn giữa dọc (nếu cần) */
+                    gap: 10px; /* Khoảng cách giữa các biểu tượng */
+                    margin-bottom: 20px;
+                }
+
+                #footer a {
+                    color: #FFD700;
+                }
+
+                    #footer a:hover {
+                        color: #ffffff;
+                    }
+
+                #footer .social a {
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    padding: 0px ;
+                    line-height: 40px;
+                    text-align: center;
+                    background: #FFD700;
+                    color: #222222;
+                    font-size: 20px;
+                }
+
+                    #footer .social a:hover {
+                        background: #ffffff;
+                        color: #FFD700;
+                    }
+
+                #footer p {
+                    margin: 0;
+                    font-size: 18px;
+                }
+            
+    </style>
+        @RenderSection("Scripts", false)
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- Vendor JavaScript File -->
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/jquery/jquery-migrate.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/vendor/easing/easing.min.js"></script>
+    <script src="~/vendor/stickyjs/sticky.js"></script>
+    <script src="~/vendor/superfish/hoverIntent.js"></script>
+    <script src="~/vendor/superfish/superfish.min.js"></script>
+    <script src="~/vendor/wow/wow.min.js"></script>
+    <script src="~/vendor/slick/slick.min.js"></script>
+    <script src="~/vendor/tempusdominus/js/moment.min.js"></script>
+    <script src="~/vendor/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="~/vendor/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Booking Javascript File -->
+    <script src="~/js/booking.js"></script>
+    <script src="~/js/jqBootstrapValidation.min.js"></script>
+
+    <!-- Main Javascript File -->
+    <script src="~/js/main.js"></script>
+</body>
+</html>

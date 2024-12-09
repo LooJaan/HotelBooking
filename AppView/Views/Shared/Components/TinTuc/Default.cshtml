@@ -1,0 +1,25 @@
+﻿@model IEnumerable<AppView.ViewModels.TinTucVM>
+@foreach (var item in Model)
+{
+    @if (item.TrangThai)
+    {
+        <div class="row" style="margin-bottom: 20px; margin-top:50px">
+            <div class="col-md-6 img-cols">
+                <div class="img-col">
+                    <img class="img-fluid w-100" src="~/img/about/@item.HinhAnh1">
+                </div>
+            </div>
+            <div class="col-md-6 content-cols">
+                <div class="content-col">
+                    <h3>@item.TenTinTucChinh</h3>
+                    <p>
+                        @item.NoiDungNgan
+                    </p>
+                    <a asp-controller="TinTucs" asp-action="XemThem" asp-route-id="@item.ID" class="btn btn-primary">XemThem</a>
+
+                </div>
+            </div>
+        </div>
+    }
+   
+}

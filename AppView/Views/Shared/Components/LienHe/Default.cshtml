@@ -1,0 +1,6 @@
+﻿@model IEnumerable<AppView.ViewModels.LienHeVM>
+
+@foreach (var item in Model)
+{
+    <div class="phone"><img style="margin-right: 5px; height: 20px; width: 20px;" src="~/img/icon/@item.LogoSDT" alt="" />@item.SoDienThoai</div>
+}

@@ -1,0 +1,61 @@
+﻿
+@{
+	ViewData["Title"] = "Trang Quản Lý";
+}
+
+<div style="margin-top: 100px;">
+	<h2 class="text-center">Chào mừng bạn đến với Trang Quản Lý!</h2>
+
+	<div class="row">
+		<div class=" fw-bold btn-group-vertical col-sm-3" role="group" aria-label="Vertical button group">
+			<a asp-action="Index" asp-controller="LoGoes" data-ajax="true" class="btn btn-warning">Logo</a>
+			<a asp-action="Index" asp-controller="LienHes" data-ajax="true" class="btn btn-warning">SĐT Liên Hệ</a>
+			<a asp-action="Index" asp-controller="MenuItems" data-ajax="true" class="btn btn-warning">Menu</a>
+			<a asp-action="Index" asp-controller="Slides" data-ajax="true" class="btn btn-warning">Slide</a>
+			<a asp-action="Index" asp-controller="WelComes" data-ajax="true" class="btn btn-warning">Lời Chào</a>
+			<a asp-action="Index" asp-controller="DichVus" data-ajax="true" class="btn btn-warning">Dịch Vụ</a>
+			<a asp-action="Index" asp-controller="LoaiPhongs" data-ajax="true" class="btn btn-warning">Loại Phòng</a>
+			<a asp-action="Index" asp-controller="LoaiPhongDichVus" data-ajax="true" class="btn btn-warning">Loại Phòng Dịch Vụ</a>
+			<a asp-action="Index" asp-controller="AnhChiTiets" data-ajax="true" class="btn btn-warning">Ảnh Chi Tiết</a>
+			<a asp-action="Index" asp-controller="TinTucs" data-ajax="true" class="btn btn-warning">Tin Tức</a>
+			
+			<a href="/TaiKhoan/Index" data-ajax="true" class="btn btn-warning">Tài Khoản</a>
+
+			<a asp-action="Index" asp-controller="FaceBooks" data-ajax="true" class="btn btn-warning">FB</a>
+			<a asp-action="Index" asp-controller="GGs" data-ajax="true" class="btn btn-warning">Google</a>
+			<a asp-action="Index" asp-controller="TikToks" data-ajax="true" class="btn btn-warning">Tik Tok</a>
+			<a asp-action="Index" asp-controller="Inters" data-ajax="true" class="btn btn-warning">Instagram</a>
+		</div>
+		<div class="col-sm-9 container" id="content-container">
+			
+
+
+		</div>
+	</div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+		$(document).ready(function () {
+		$("a[data-ajax='true']").on("click", function (e) {
+			e.preventDefault(); 
+
+			var url = $(this).attr("href"); 
+
+			
+			$.get(url)
+				.done(function (data) {
+					$("#content-container").html(data); 
+				})
+				.fail(function () {
+					$("#content-container").html('<div class="alert alert-danger">Đã xảy ra lỗi, vui lòng thử lại.</div>');
+				});
+		});
+	});
+
+</script>
+
+
+
+

@@ -1,0 +1,15 @@
+﻿@model IEnumerable<AppView.ViewModels.ItemMenu>
+
+<ul>
+
+    @foreach (var item in Model)
+    {
+        @if (item.TrangThai) // Kiểm tra nếu TrangThai là true
+        {
+            <li class="nav-item">
+                <a class="nav-link text-light" asp-area="" asp-controller="@item.TenController" asp-action="@item.Url">@item.Name</a>
+            </li>
+        }
+    }
+
+</ul>
