@@ -336,6 +336,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFpS2hvYW5cVHJhbmdRdWFuTHkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/HT4/AppView/Views/TaiKhoan/_CreateTaiKhoanPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFpS2hvYW5cX0NyZWF0ZVRhaUtob2FuUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/HT4/AppView/Views/TaiKhoan/_IndexTaiKhoanPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFpS2hvYW5cX0luZGV4VGFpS2hvYW5QYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

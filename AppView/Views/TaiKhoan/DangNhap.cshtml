@@ -1,4 +1,4 @@
-﻿@{
+﻿@* @{
     ViewData["Title"] = "Đăng Nhập";
 }
 
@@ -24,3 +24,50 @@
 }
 
 
+ *@
+
+
+@{
+    ViewData["Title"] = "Đăng Nhập";
+}
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="card shadow-lg" style="width: 100%; max-width: 400px;">
+        <div class="card-body">
+            <h2 class="text-center">@ViewData["Title"]</h2>
+            <hr />
+            <form asp-action="DangNhap" method="post">
+                @if (ViewBag.ErrorMessage != null)
+                {
+                    <div class="alert alert-danger text-center">
+                        @ViewBag.ErrorMessage
+                    </div>
+                }
+
+                <div class="mb-3">
+                    <label for="TaiKhoan" class="form-label">Tài khoản</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-person"></i></span>
+                        <input type="text" class="form-control" id="TaiKhoan" name="TaiKhoan" placeholder="Nhập tài khoản" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="MatKhau" class="form-label">Mật khẩu</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                        <input type="password" class="form-control" id="MatKhau" name="MatKhau" placeholder="Nhập mật khẩu" required>
+                    </div>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-block">Đăng Nhập</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+}

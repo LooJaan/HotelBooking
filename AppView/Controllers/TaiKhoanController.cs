@@ -44,14 +44,14 @@ namespace AppView.Controllers
         // GET: TaiKhoan
         public async Task<IActionResult> Index()
         {
-            var data = _context.TaiKhoans.ToList();
-            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
-            {
-                return PartialView("_IndexTaiKhoanPartial", data);
-            }
-            return View(data);
+            //var data = _context.TaiKhoans.ToList();
+            //if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            //{
+            //    return PartialView("_IndexTaiKhoanPartial", data);
+            //}
+            //return View(data);
 
-            //return PartialView(await _context.TaiKhoans.ToListAsync());
+            return PartialView(await _context.TaiKhoans.ToListAsync());
         }
 
         // GET: TaiKhoan/Details/5
